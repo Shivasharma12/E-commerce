@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style>
+  h3{
+    padding-left: 15px;
+    
+  }
+  p{
+    color: darkred;
+    font-size: 10px;
+    margin-top: -1px;
+  }
+    fieldset{
+      height: 100%;
+      width: 200px;
+      background-color: whitesmoke;
+      color: black;
+      align-content: center;
+      margin-left: 40%;
+      margin-top: 5%;
+      border: 3px salmon black;
+      box-shadow: 2px 2px 20px skyblue;
+    }
+    select{
+      width: 170px;
+      height: 20px;
+    }
+    #first{
+      height: 30px;
+      width: 200px;
+      background-color: skyblue;
+      color: whitesmoke;
+      margin: 10px;
+    }
+    body{
+      background-image: url(app.png);
+
+    }
+  h1{
+  color: rebeccapurple;
+  font-size: 40px;
+  left: 50%;
+
+    }
+  </style>
+  <script>
+    function printError(elemId,hintMsg){
+      document.getElementById(elemId).innerHTML=hintMsg;
+    }
+    function validateForm(){
+      var name=document.contactForm.name.value;
+      var email=document.contactForm.email.value;
+      var pass=document.contactForm.pass.value;
+      var phone=document.contactForm.phonenumber.value;
+      var country=document.contactForm.country.value;
+      }
+
+    var nameErr=emailErr=phoneErr=countryErr=true;
+    if(name==""){
+      printError("nameErr","please enter your name");
+    }
+    else{
+      var regex=/^[a-zA-Z\s]+$/;
+      if(regex.test(name)===false)
+      {
+        printError("nameErr","please enter valid name");
+      }
+      else
+      {
+        printError("nameErr","");
+        nameErr=false;
+      }
+    }
+      
+        
+      if (email==""){
+        printError("emailErr","please enter your email");
+      }
+      else{
+        var regex=/^\S+@\S+\.\S+$/;
+        if (regex.test(email)===false){
+          printError("emailErr","please enter valid email");
+        }
+        else{
+          printError("emailErr","");
+          emailErr=false;
+        }
+      }
+      
+        if (phone==""){
+          printError("phoneErr","please enter your mobile no.");
+        }
+        else{
+          var regex=/^[1-9]\d{9}$/;
+          if(regex.test(phone)===false){
+            printError("phoneErr","please enter a valid 10 digit mobile no.");
+          }
+          else{
+            printError("phoneErr","");
+            phoneErr=false;
+          }
+        }
+        if (country=="Select"){
+          printError("countryErr","please select your country");
+        }
+        else{
+          printError("countryErr","");
+          countryErr=false;
+        }
+       
+
+
+        if((nameErr||emailErr||phoneErr||countryErr)==true){
+          return false;
+        }
+        else{
+          var dataPreview="You've entered the following details:\n"+
+                  "Full Name:"+ name +"\n"+
+                  "Email:"+email +"\n"+
+                  "Mobile:"+phone +"\n"+
+                  "password:"+pass+"\n"+
+                  "Country:"+country +"\n"+
+                 
+          alert(dataPreview);
+
+        }
+  </script>
+</head>
+<body>
+  <h1 style="text-align: center;">SIGN UP HERE</h1>
+  <form name="contactForm"onsubmit="return validateForm()"method="post" action="registersite.php">
+    <fieldset>
+    Full Name:<input type="text" name="name" maxlength="20"><br>
+    <p class="error"id="nameErr"></p>
+    Email Address:<input type="text" name="email"><br>
+    <p class="error"id="emailErr"></p>
+     password:<input type="password" name="pass" maxlength="8"><br>
+    Mobile No.:<input type="text" name="phonenumber" maxlength="10"><br>
+    <p class="error"id="phoneErr"></p>
+    country:<br><select name="country">
+      <option>Select</option>
+      <option>India</option>
+      <option>usa</option>
+      <option>uae</option>
+      <option>greece</option>
+    </select>
+    <p class="error"id="countryErr"></p><br>
+     address:<input type="text" name="add" maxlength="100"><br>
+    <input type="Submit" name="Submit"value="Submit"Id="first">
+
+  </fieldset>
+  </form>
+
+</body>
+</html>
+

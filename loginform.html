@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>login form</title>
+	<style > 
+	body
+	{
+		background-color: black;
+	}
+    fieldset{
+    	background-color: skyblue;
+    	margin-top: 100px;
+    	border: 2px darkblue;
+    	width: 400px;
+
+    }
+    
+    
+    #first #second{
+    	background-color: grey;
+
+    }
+    button{
+    	font-size: 30px;
+    	width: 200px;
+    	border: 2px solid blue;
+
+    }
+</style>
+<a href="login.php"></a>
+</head>
+<body>
+<center>
+	<fieldset>
+		<form><table>
+			<tr>
+				<td>username</td>
+				<td><input type="text" name="uname" id="first"></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="text" name="password" id="second"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button onclick="login()">login</button> </td>
+			</tr>
+
+
+		</form>
+		</table>
+	</fieldset>
+	</center>
+<script > 
+function login()
+{
+	var name,password;
+	name=document.getElementById('first').value;
+	password=document.getElementById('second').value;
+	if(name=="" && password=="")
+	{
+		alert("please enter user name and password");
+	}
+	else if(name=="admin" && password=="")
+	{
+		alert("please enter  password");
+	}
+	else if(name=="" && password=="12345")
+	{
+		alert("please enter  username");
+	}
+	else if(name=="admin" && password=="12345")
+	{
+		alert("login succesfully");
+		window.open("glow.html");
+	}
+	else{
+		alert("wrong username and password");
+	}
+	
+}
+</script>
+</body>
+</html>

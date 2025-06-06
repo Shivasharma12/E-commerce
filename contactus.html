@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>contact us </title>
+<style >
+	body{
+		background-image: url(contact.jpg);
+	}
+	h1{
+		font-family: sans-serif;
+		font-size: 80px;
+		color: purple;
+	text-shadow: 10px 10px solid red;
+                                                      
+	}
+	#heading{
+		font-size: 20px;
+		color: black;
+	}
+	#uname{
+		border-color: transparent;
+	}
+	#mail{
+		border-color: transparent;
+	}
+	#msg{
+background-color:lightgrey;
+      	height: 57px;
+      	width: 230px;
+      	position: absolute;
+          border-radius: 20px ;
+          color: white;
+          font-size: 15px;
+          border-color: white;
+          top: 500px;
+          left: 60px;
+	}
+
+	#form{
+  height: 600px;
+  width: 350px;
+  position: absolute;
+  left: 808px;
+  border-color: purple;
+  border-radius: 10px;
+  border: 1px solid purple;
+	}
+	#text{
+	height: 250px;
+   width: 300px;
+   left: 10px;
+   position: absolute;
+	}
+</style>
+</head>
+<center><h1><B>___________CONTACT US__________</B></h1></center>
+
+<body>
+
+	<form method="post" action="contactus.php"><div id="form">
+<center><h1 id="heading">Have a Question?<br>Contact Us!</h1></center>
+<lable id="lable1"><b>Name:</b></lable><input type="text" name="uname" id="uname" ><br><br>
+<lable id="label2"><b>Email:</b></lable><input type="text" name="email" id="mail" ><br><br><br><br>
+<lable id="label3"><b>Message<br></lable><input type="text" name="msg" id="text" ><br><br><br>
+<input type="submit" name="submit" value="Send Message" id="msg">
+</div></form>
+</body>
+</html>
